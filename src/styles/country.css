@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+/* 300, 600, 800 */
+/* font-family: 'Nunito Sans', sans-serif; */
+
+.card{
+    font-family: 'Nunito Sans';
+    width: 21%;
+    height: fit-content;
+    margin-bottom: 20px;
+
+    background-color: white;
+
+    min-height: 360px;
+
+    box-shadow: 0 0 10px 5px lightgrey;
+
+    border-radius: 5px;
+
+    text-decoration: none !important;
+    color: black !important;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.card img{
+    width: 100%;
+    max-height: 168px;
+    object-fit: cover;
+    margin: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.infos{
+    /* box-sizing: border-box; */
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+
+    padding: 20px;
+
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.topico{
+    font-weight: 600;
+}
+
+@media (max-width: 850px){
+    .card{
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .card{
+        width: 90%;
+    }
+}
+
+/* NOME DO PAÍS */
+
+
+/* POPULAÇÃO */
+
+
+/* REGIÃO */
+
+
+/* CAPITAL */

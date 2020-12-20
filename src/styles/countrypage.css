@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+/* 300, 600, 800 */
+/* font-family: 'Nunito Sans', sans-serif; */
+
+.bigcountry{
+    width: 100%;
+    height: calc(100vh - 60px);
+
+    display: flex;
+}
+
+.bigcountry img{
+    width: 40%;
+    height: 20vw;
+}
+
+.countryinfos{
+    font-family: 'Nunito Sans', sans-serif, Arial, Helvetica, sans-serif;
+    margin-left: 40px;
+}
+
+.countryinfos h2{
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.textinfos{
+    display: flex;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+.otherinfos{
+    margin-left: 80px;
+}
+
+.bordercountries{
+    margin-top: 15px;
+}
+
+.topicborder{
+    display: inline-block;
+}
+
+.bordernames{
+    display: flex;
+    width: fit-content;
+    flex-wrap: wrap;
+}
+
+.border{
+    padding: 3px 15px;
+    border: 1px solid lightgrey;
+    box-shadow: 0 0 10px 1px lightgrey;
+    margin: 5px 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .bigcountry{
+        flex-direction: column;
+    }
+    .bigcountry img{
+        width: 100%;
+        height: unset;
+    }
+    .textinfos{
+        flex-direction: column;
+        line-height: 2em;
+    }
+    .firstinfos{
+        margin-bottom: 30px;
+    }
+    .otherinfos{
+        margin-left: 0;
+    }
+}
