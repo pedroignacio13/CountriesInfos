@@ -26,8 +26,7 @@
 
 .textinfos{
     display: flex;
-    /* font-size: 1em;
-    line-height: 2em; */
+    font-size: 1.2vw;
     line-height: 27px;
 }
 
@@ -39,8 +38,9 @@
     margin-top: 15px;
 }
 
-.topicborder{
+.topicoborder{
     display: inline-block;
+    font-size: 1.2vw;
 }
 
 .bordernames{
@@ -54,9 +54,10 @@
     border: 1px solid lightgrey;
     box-shadow: 0 0 10px 1px lightgrey;
     margin: 5px 5px;
+    font-size: 1.2vw;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     .bigcountry{
         flex-direction: column;
     }
@@ -66,6 +67,7 @@
     }
     .textinfos{
         flex-direction: column;
+        font-size: 2.5vw;
         line-height: 2em;
     }
     .firstinfos{
@@ -73,5 +75,11 @@
     }
     .otherinfos{
         margin-left: 0;
+    }
+    .border{
+        font-size: 2.5vw;
+    }
+    .topicoborder{
+        font-size: 2.5vw;
     }
 }
