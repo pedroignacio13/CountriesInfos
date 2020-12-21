@@ -43,7 +43,10 @@ const Inputs = ({ regions }) => {
 
     //FUNFA CERTIN
     function filtrarPais(pais){
-        setCountries(countriesBackup.filter((obj) => obj.name.startsWith(pais)))
+        setCountries(() => {
+            //A IDEIA É FAZER COM QUE A PRIMEIRA LETRA SEJA SEMPRE MAIUSCULA SEM QUE O USUARIO TENHA QUE COLOCÁ-LA MAIUSCULA
+            return countriesBackup.filter((obj) => obj.name.startsWith(pais))
+        })
     }
 
     //NÃO CONSEGUI IMPLEMENTAR NO CLICK DO OPTION
@@ -70,7 +73,7 @@ const Inputs = ({ regions }) => {
              onChange={(e) => validaInput(e.target.value)}            
             />
 
-            <Select placeholder="Filter by region" className="lista" options={regions} />
+            <Select onChange={(e) => filtrarRegiao(e.value)} placeholder="Filter by region" className="lista" options={regions} />
                             
         </>
     )
