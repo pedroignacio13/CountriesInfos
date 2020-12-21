@@ -8,35 +8,35 @@ function BigCountry(){
 
     const { code } = useParams()
 
-		const [thisCountry, setThisCountry] = useState([])
-		
-		const {countries} = useContext(MyContext)
+	const [thisCountry, setThisCountry] = useState([])
+	
+	const {countries, darkModeOn} = useContext(MyContext)
 
     useEffect(() => {
-				setThisCountry(countries.filter((objPais) => objPais.alpha2Code == code))
-		}, [])
+		setThisCountry(countries.filter((objPais) => objPais.alpha2Code == code))
+	}, [])
 		
-		const settingFullBorders = (countries, borders) => {
-			let fronteirasCompletas = []
+	const settingFullBorders = (countries, borders) => {
+		let fronteirasCompletas = []
 
-			//iterando pelo array de borders
-			for(let i = 0; i < borders.length; i++){
+		//iterando pelo array de borders
+		for(let i = 0; i < borders.length; i++){
 
-				//iterando pelo array de countries
-				for(let j = 0; j < countries.length; j++){
+			//iterando pelo array de countries
+			for(let j = 0; j < countries.length; j++){
 
-					if(borders[i] == countries[j].alpha3Code){
+				if(borders[i] == countries[j].alpha3Code){
 
-						fronteirasCompletas.push(countries[j].name)
+					fronteirasCompletas.push(countries[j].name)
 
-					}
-				
 				}
 			
 			}
-
-			return fronteirasCompletas
+		
 		}
+
+		return fronteirasCompletas
+	}
 
 	return(
 		<>
@@ -64,12 +64,12 @@ function BigCountry(){
 
 							<img src={flag} alt={name} />
 
-							<div className="countryinfos">
+							<div className={darkModeOn ? 'countryinfos dark-textinfos' : 'countryinfos'}>
 
 								<h2> {name} </h2>
 
                 {/* ESSA DIV ENGLOBA AS DUAS COLUNAS DE DADOS */}
-								<div className="textinfos">
+								<div className={darkModeOn ? 'textinfos dark-textinfos' : 'textinfos'}>
 
                   {/* ENGLOBA A PRIMEIRA COLUNA */}
 									<div className="firstinfos">
@@ -116,11 +116,11 @@ function BigCountry(){
 								</div>
 
 								<div className="bordercountries">
-									<span className="topico topicoborder">Border Countries: </span>
+									<span className="topicoborder">Border Countries: </span>
 									<div className="bordernames">
 										{
 											fullBordersNames.map((arr, index) => {											
-												return <span className="border" key={index}> {arr} </span>
+												return <span className={darkModeOn ? 'border dark-border' : 'border'} key={index}> {arr} </span>
 											})
 										}
 									</div>

@@ -4,9 +4,13 @@
 *{
     margin: 0;
     padding: 0;
+    transition: background-color 0.5s;
 }
 
 .main{
     box-sizing: border-box;
     background-color: hsl(0, 0%, 98%);
+}
+.dark-main{
+    background-color: hsl(207, 26%, 17%);
 }

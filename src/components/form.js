@@ -15,7 +15,8 @@ function Form(){
         mostrarInputs, 
         setMostrarInputs, 
         regions,
-        countries} = useContext(MyContext)
+        countries,
+        darkModeOn} = useContext(MyContext)
 
     return(
         //não está funcionando o filtro dos países
@@ -23,7 +24,7 @@ function Form(){
 
             {
                 !mostrarInputs ? 
-                <Link className='back' to='/' onClick={() => setMostrarInputs(true)}> <BsArrowLeft /> Back </Link>
+                <Link className={darkModeOn ? 'back dark-back' : 'back'} to='/' onClick={() => setMostrarInputs(true)}> <BsArrowLeft /> Back </Link>
                 : 
                 <Inputs regions={regions} />
             }
@@ -39,7 +40,8 @@ const Inputs = ({ regions }) => {
     const {
         countries,
         setCountries,
-        countriesBackup} = useContext(MyContext)
+        countriesBackup,
+        darkModeOn} = useContext(MyContext)
 
     //FUNFA CERTIN
     function filtrarPais(pais){
@@ -68,12 +70,17 @@ const Inputs = ({ regions }) => {
             <input 
              type="text" 
              placeholder='Search for a country...' 
-             className='search'
+             className={darkModeOn ? 'search dark-search' : 'search'}
              value={country}
              onChange={(e) => validaInput(e.target.value)}            
             />
 
-            <Select onChange={(e) => filtrarRegiao(e.value)} placeholder="Filter by region" className="lista" options={regions} />
+            <Select 
+             onChange={(e) => filtrarRegiao(e.value)} 
+             placeholder="Filter by region"
+             className={darkModeOn ? 'dark-lista' : 'lista'} 
+             options={regions} 
+            />
                             
         </>
     )

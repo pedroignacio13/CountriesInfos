@@ -29,6 +29,9 @@
     font-size: 1.2vw;
     line-height: 27px;
 }
+.dark-textinfos{
+    color: hsl(0, 0%, 100%);
+}
 
 .otherinfos{
     margin-left: 80px;
@@ -55,6 +58,10 @@
     box-shadow: 0 0 10px 1px lightgrey;
     margin: 5px 5px;
     font-size: 1.2vw;
+}
+.dark-border{
+    border: 1px solid hsl(209, 23%, 22%);
+    box-shadow: 0 0 10px 1px hsl(209, 23%, 22%);
 }
 
 @media only screen and (max-width: 800px) {

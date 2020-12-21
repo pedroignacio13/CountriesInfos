@@ -5,37 +5,38 @@ import MyContext from '../context'
 import '../styles/country.css'
 
 function Country({ pais }){
-    const { flag, name, population, region, capital, alpha2Code } = pais
 
-    const {mostrarInputs, setMostrarInputs} = useContext(MyContext)
+  const { flag, name, population, region, capital, alpha2Code } = pais
 
-    return(
-        
-        <Link className='card' to={`/${alpha2Code}`} onClick={() => setMostrarInputs(false)}>
-        
-            <img src={flag} alt={name}/>
+  const {setMostrarInputs, darkModeOn} = useContext(MyContext)
 
-            <section className="infos">
+  return(
+      
+    <Link className={darkModeOn ? 'card dark-card' : 'card'} to={`/${alpha2Code}`} onClick={() => setMostrarInputs(false)}>
+    
+        <img src={flag} alt={name}/>
 
-                <h4> {name} </h4>
+        <section className={darkModeOn ? 'infos dark-infos' : 'infos'}>
 
-                <p>
-                    <span className="topico">Population:</span> {population}
-                </p>
+            <h4> {name} </h4>
 
-                <p>
-                    <span className="topico">Region:</span> {region}
-                </p>
+            <p>
+                <span className="topico">Population:</span> {population}
+            </p>
 
-                <p>
-                    <span className="topico">Capital:</span> {capital}
-                </p>
+            <p>
+                <span className="topico">Region:</span> {region}
+            </p>
 
-            </section>
-        
-        </Link>
-       
-    )
+            <p>
+                <span className="topico">Capital:</span> {capital}
+            </p>
+
+        </section>
+    
+    </Link>
+      
+  )
 }
 
 export default Country;

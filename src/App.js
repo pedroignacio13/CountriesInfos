@@ -9,15 +9,19 @@ import './styles/global.css'
 const url = 'https://restcountries.eu/rest/v2/'
 
 function App() {
+  /* FARÁ A CONDICIONAL NA RENDERIZAÇÃO DOS COMPONENTES NO MODO DARK */
+  const [darkModeOn, setDarkModeOn] = useState(false)
+
   /* CONDICIONAL PARA RENDERIZAR O FORM E A LISTA */
   const [mostrarInputs, setMostrarInputs] = useState(true)
 
   /* STATE QUE ARMAZENA O ARRAY COM TODOS OS PAÍSES */
   const [countries, setCountries] = useState([])
 
+  /* ARRAY QUE CONTÉM O REQUEST INICIAL DOS PAÍSES (USADO PARA AUXILIAR NO FILTRO DE PAÍSES) */
   const [countriesBackup, setCountriesBackup] = useState([])
 
-  const [paisFiltrado, setPaisFiltrado] = useState([])
+  /* const [paisFiltrado, setPaisFiltrado] = useState([]) */
 
   /* AUXILIO NA RENDERIZAÇÃO (NÃO SEI SE ESTÁ IMPLEMENTADO OU SE FUNCIONA) */
   const [loading, setLoading] = useState(true)
@@ -66,8 +70,10 @@ function App() {
         regions,
         countriesBackup,
         setCountriesBackup,
-        paisFiltrado,
-        setPaisFiltrado
+        /* paisFiltrado,
+        setPaisFiltrado */
+        darkModeOn,
+        setDarkModeOn
       }}
     >
 

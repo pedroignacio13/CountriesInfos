@@ -14,10 +14,12 @@ function Main(){
     const {        
         countries,
         loading,
+        darkModeOn, 
+        setDarkModeOn
     } = useContext(MyContext)
     
     return(
-        <main className="main">
+        <main className={darkModeOn ? 'main dark-main' : 'main'}>
 
             <Form />
             {

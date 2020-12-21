@@ -11,6 +11,10 @@
     justify-content: space-between;
     align-items: center;
 }
+.dark-nav{
+    background-color: hsl(209, 23%, 22%);
+    border-bottom: 2px solid hsl(208, 23%, 15%);
+}
 
 .titulo{
     width: 55%;
@@ -18,7 +22,10 @@
     font-weight: 800;
 
     text-decoration: none !important;
-    color: black !important;
+    color: black;
+}
+.dark-titulo{
+    color: hsl(0, 0%, 100%);
 }
 
 div.darkmode{
@@ -29,6 +36,10 @@ div.darkmode{
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+.dark-icon{
+    background-color: white;
 }
 
 .darkmode:hover{
