@@ -68,8 +68,10 @@ function BigCountry(){
 
 								<h2> {name} </h2>
 
+                {/* ESSA DIV ENGLOBA AS DUAS COLUNAS DE DADOS */}
 								<div className="textinfos">
 
+                  {/* ENGLOBA A PRIMEIRA COLUNA */}
 									<div className="firstinfos">
 										<p>
 											<span className="topico">Native Name: </span> {nativeName}
@@ -88,6 +90,7 @@ function BigCountry(){
 										</p>
 									</div>
 
+                  {/* ENGLOBA A SEGUNDA COLUNA */}
 									<div className="otherinfos">
 										<p>
 											<span className="topico">Top Level Domain: </span> {topLevelDomain[0]}

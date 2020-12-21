@@ -5,6 +5,8 @@ import { GrSearch } from 'react-icons/gr'
 import { BsArrowLeft } from 'react-icons/bs'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 
+import Select from 'react-select';
+
 import '../styles/form.css'
 
 function Form(){
@@ -13,9 +15,7 @@ function Form(){
         mostrarInputs, 
         setMostrarInputs, 
         regions,
-        countries,
-        paisString,
-        setPaisString} = useContext(MyContext)
+        countries} = useContext(MyContext)
 
     return(
         //não está funcionando o filtro dos países
@@ -41,15 +41,20 @@ const Inputs = ({ regions }) => {
         setCountries,
         countriesBackup} = useContext(MyContext)
 
-        //FUNFA CERTIN
-        function filtrarPais(pais){
-            setCountries(countriesBackup.filter((obj) => obj.name.startsWith(pais)))
-        }
+    //FUNFA CERTIN
+    function filtrarPais(pais){
+        setCountries(countriesBackup.filter((obj) => obj.name.startsWith(pais)))
+    }
 
-        //NÃO CONSEGUI IMPLEMENTAR NO CLICK DO OPTION
-        function filtrarRegiao(continente){
-            setCountries(countriesBackup.filter((obj) => obj.region === continente))
-        }
+    //NÃO CONSEGUI IMPLEMENTAR NO CLICK DO OPTION
+    function filtrarRegiao(continente){
+        setCountries(countriesBackup.filter((obj) => obj.region === continente))
+    }
+
+    //DEVE VALIDAR O INPUT PARA VERIFICAR SE A PRIMEIRA LETRA É MAIÚSCULA
+    function validaInput(input){
+        setCountry(input)
+    }
     
     useEffect(() => {
         filtrarPais(country)
@@ -62,21 +67,11 @@ const Inputs = ({ regions }) => {
              placeholder='Search for a country...' 
              className='search'
              value={country}
-             onChange={(e) => setCountry(e.target.value)}
-             
+             onChange={(e) => validaInput(e.target.value)}            
             />
 
-            <input list="regioes" className='lista'/>
-
-            <datalist id='regioes' placeholder='Filter by Region' onClick={() => console.log('option clicado')}>
-
-                { 
-                    regions.length > 0 && regions.map((regiao, index) => {
-                        return <option value={regiao} key={index}></option>
-                    })
-                }
-
-            </datalist>
+            <Select placeholder="Filter by region" className="lista" options={regions} />
+                            
         </>
     )
 }

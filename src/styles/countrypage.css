@@ -16,7 +16,7 @@
 
 .countryinfos{
     font-family: 'Nunito Sans', sans-serif, Arial, Helvetica, sans-serif;
-    margin-left: 40px;
+    margin-left: 10%;
 }
 
 .countryinfos h2{
@@ -26,8 +26,9 @@
 
 .textinfos{
     display: flex;
-    font-size: 1em;
-    line-height: 2em;
+    /* font-size: 1em;
+    line-height: 2em; */
+    line-height: 27px;
 }
 
 .otherinfos{

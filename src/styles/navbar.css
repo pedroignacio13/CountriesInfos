@@ -22,13 +22,17 @@
 }
 
 div.darkmode{
-    width: 45%;
+    width: 10%;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
 
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+.darkmode:hover{
+    cursor: pointer;
 }
 
 div.darkmode p{

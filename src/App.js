@@ -39,10 +39,15 @@ function App() {
 
   /* FILTER FUNCTION FOR THE FILTER OF COUNTRIES */
   const filterRegions = (arr) => {
+
       let newRegions = arr.map((obj) => obj.region)
       newRegions = [...new Set(newRegions)]
       newRegions = newRegions.filter((regiao) => regiao !== "")
-      setRegions(newRegions)
+      let objarr = newRegions.map((regiao) => {
+        return { "value" : regiao, "label" : regiao }
+      })
+      setRegions(objarr)
+      
   }
 
   /* REALIZA O REQUEST */
