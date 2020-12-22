@@ -13,7 +13,7 @@ function BigCountry(){
 	const {countries, darkModeOn} = useContext(MyContext)
 
     useEffect(() => {
-		setThisCountry(countries.filter((objPais) => objPais.alpha2Code == code))
+		setThisCountry(countries.filter((objPais) => objPais.alpha2Code === code))
 	}, [])
 		
 	const settingFullBorders = (countries, borders) => {
@@ -25,7 +25,7 @@ function BigCountry(){
 			//iterando pelo array de countries
 			for(let j = 0; j < countries.length; j++){
 
-				if(borders[i] == countries[j].alpha3Code){
+				if(borders[i] === countries[j].alpha3Code){
 
 					fronteirasCompletas.push(countries[j].name)
 

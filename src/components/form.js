@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef, useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import MyContext from '../context'
 import { GrSearch } from 'react-icons/gr'
@@ -15,7 +15,6 @@ function Form(){
         mostrarInputs, 
         setMostrarInputs, 
         regions,
-        countries,
         darkModeOn} = useContext(MyContext)
 
     return(

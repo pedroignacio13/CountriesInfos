@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import MyContext from './context'
 import Navbar from './components/navbar'
 import Main from './components/main'
@@ -56,7 +56,7 @@ function App() {
 
   /* REALIZA O REQUEST */
   useEffect(() => {
-      fetchCountries()
+    fetchCountries()
   }, [])
 
   return (

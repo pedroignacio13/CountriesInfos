@@ -1,5 +1,5 @@
-import React, { useReducer, useContext } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import MyContext from '../context'
 
 import '../styles/country.css'

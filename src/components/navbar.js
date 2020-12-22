@@ -1,12 +1,12 @@
-import React, { useContext, useState } from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import MyContext from '../context'
 import '../styles/navbar.css'
 import { FiMoon } from 'react-icons/fi'
 
 function Navbar(){
 
-  const {mostrarInputs, setMostrarInputs, darkModeOn, setDarkModeOn} = useContext(MyContext)
+  const {setMostrarInputs, darkModeOn, setDarkModeOn} = useContext(MyContext)
 
   function darkMode(){
     setDarkModeOn(!darkModeOn)
