@@ -63,10 +63,6 @@ const Inputs = ({ regions }) => {
         filtrarPais(country)
     }, [country, countriesBackup, setCountries])
 
-    const colorStyles = {
-
-    }
-
     return(
         <>
             <input 

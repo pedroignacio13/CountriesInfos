@@ -65,10 +65,6 @@ input:focus{
     font-size: 12px;
     font-weight: 600;
 }
-.lista > *{
-    margin: 0;
-    font-weight: 300;
-}
 
 .back{
     display: flex;
