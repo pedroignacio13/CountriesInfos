@@ -41,14 +41,6 @@ const Inputs = ({ regions }) => {
         countriesBackup,
         darkModeOn} = useContext(MyContext)
 
-    //FUNFA CERTIN
-    function filtrarPais(pais){
-        setCountries(() => {
-            //A IDEIA É FAZER COM QUE A PRIMEIRA LETRA SEJA SEMPRE MAIUSCULA SEM QUE O USUARIO TENHA QUE COLOCÁ-LA MAIUSCULA
-            return countriesBackup.filter((obj) => obj.name.startsWith(pais))
-        })
-    }
-
     //NÃO CONSEGUI IMPLEMENTAR NO CLICK DO OPTION
     function filtrarRegiao(continente){
         setCountries(countriesBackup.filter((obj) => obj.region === continente))
@@ -60,8 +52,16 @@ const Inputs = ({ regions }) => {
     }
     
     useEffect(() => {
+        //FUNFA CERTIN
+        function filtrarPais(pais){
+            setCountries(() => {
+                //A IDEIA É FAZER COM QUE A PRIMEIRA LETRA SEJA SEMPRE MAIUSCULA SEM QUE O USUARIO TENHA QUE COLOCÁ-LA MAIUSCULA
+                return countriesBackup.filter((obj) => obj.name.startsWith(pais))
+            })
+        }
+
         filtrarPais(country)
-    }, [country])
+    }, [country, countriesBackup, setCountries])
 
     return(
         <>

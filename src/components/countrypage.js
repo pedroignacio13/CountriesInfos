@@ -14,7 +14,7 @@ function BigCountry(){
 
     useEffect(() => {
 		setThisCountry(countries.filter((objPais) => objPais.alpha2Code === code))
-	}, [])
+	}, [code, countries])
 		
 	const settingFullBorders = (countries, borders) => {
 		let fronteirasCompletas = []

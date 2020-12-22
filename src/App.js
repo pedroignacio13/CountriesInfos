@@ -29,17 +29,7 @@ function App() {
   /* ARRAY QUE ARMAZENA SOMENTE AS REGIÕES PARA O FILTRO */
   const [regions, setRegions] = useState([])
 
-  /* FETCH FUNCTION */
-  const fetchCountries = async () => {
-      const response = await fetch(url)
-      const data = await response.json()
-      setCountries(() => {
-          filterRegions(data)
-          setCountriesBackup(data)
-          return data
-      })
-      setLoading(false)
-  }
+  
 
   /* FILTER FUNCTION FOR THE FILTER OF COUNTRIES */
   const filterRegions = (arr) => {
@@ -56,6 +46,18 @@ function App() {
 
   /* REALIZA O REQUEST */
   useEffect(() => {
+    /* FETCH FUNCTION */
+    const fetchCountries = async () => {
+    const response = await fetch(url)
+    const data = await response.json()
+    setCountries(() => {
+        filterRegions(data)
+        setCountriesBackup(data)
+        return data
+    })
+    setLoading(false)
+    }
+
     fetchCountries()
   }, [])
 
