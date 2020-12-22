@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import MyContext from '../context'
-import { GrSearch } from 'react-icons/gr'
+/* import { GrSearch } from 'react-icons/gr' */
 import { BsArrowLeft } from 'react-icons/bs'
-import { RiArrowDropDownLine } from 'react-icons/ri'
+/* import { RiArrowDropDownLine } from 'react-icons/ri' */
 
 import Select from 'react-select';
 
