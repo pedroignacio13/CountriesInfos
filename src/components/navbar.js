@@ -18,7 +18,7 @@ function Navbar(){
       <Link className={darkModeOn ? 'titulo dark-titulo' : 'titulo'} to='/' onClick={() => setMostrarInputs(true)}>Where in the world?</Link>
 
       <div className={darkModeOn ? 'darkmode dark-titulo' : 'darkmode'} onClick={() => darkMode()}>
-        <FiMoon style={{ fill : `${darkModeOn ? 'white' : null}` }} />
+        <FiMoon id='lua' style={{ fill : `${darkModeOn ? 'white' : null}` }} />
         <p>Dark Mode</p>
       </div>
 

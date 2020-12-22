@@ -17,7 +17,7 @@
 }
 
 .titulo{
-    width: 55%;
+    /* width: 55%; */
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 800;
 
@@ -29,7 +29,6 @@
 }
 
 div.darkmode{
-    width: 10%;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
 
@@ -37,10 +36,11 @@ div.darkmode{
     justify-content: flex-end;
     align-items: center;
 }
-
-.dark-icon{
-    background-color: white;
+#lua{
+    width: 20px !important;
+    margin-right: -5px;
 }
+
 
 .darkmode:hover{
     cursor: pointer;
