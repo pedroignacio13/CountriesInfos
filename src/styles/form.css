@@ -47,7 +47,7 @@ input:focus{
     font-weight: 600;
 }
 .dark-lista{
-    width: 170px;
+    /* width: 170px; */
     height: fit-content !important;
     border-radius: 5px;
     border: none;
