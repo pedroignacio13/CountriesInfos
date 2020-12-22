@@ -38,7 +38,6 @@ const Inputs = ({ regions }) => {
     const [country, setCountry] = useState('')
 
     const {
-        countries,
         setCountries,
         countriesBackup,
         darkModeOn} = useContext(MyContext)
