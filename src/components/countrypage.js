@@ -116,14 +116,14 @@ function BigCountry(){
 								</div>
 
 								<div className="bordercountries">
-									<span className="topicoborder">Border Countries: </span>
-									<div className="bordernames">
-										{
-											fullBordersNames.map((arr, index) => {											
-												return <span className={darkModeOn ? 'border dark-border' : 'border'} key={index}> {arr} </span>
-											})
-										}
-									</div>
+									<span className="topicoborder">
+										Border Countries: {fullBordersNames.length === 0 ? <b>Sem Informações</b> : 
+																fullBordersNames.map((arr, index) => {											
+																	return <span className={darkModeOn ? 'border dark-border' : 'border'} key={index}> {arr} </span>
+																})
+															}
+									</span>
+									
 								</div>
 									
 							</div>
