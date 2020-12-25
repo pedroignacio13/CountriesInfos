@@ -91,7 +91,7 @@ const Inputs = ({ regions }) => {
     )
     const IndicatorsContainer = props => {
       return (
-        <div style={{ backgroundColor : `${darkModeOn ? 'hsl(209, 23%, 22%)' : 'initial'}`, padding: '1px 0px' }}>
+        <div>
           <components.IndicatorsContainer {...props} />
         </div>
       )
@@ -142,11 +142,20 @@ const Inputs = ({ regions }) => {
                 ...base,
                 backgroundColor: `${darkModeOn ? 'hsl(209, 23%, 22%)' : 'initial'}`,
                 width: 'calc(100% - 47px)',
-                padding: '7px 0px 7px 10px'
+                padding: '7px 0px 7px 10px',
+                borderTopLeftRadius: 3,
+                borderBottomLeftRadius: 3
               }),
               placeholder: base => ({
                 ...base,
                 color: `${darkModeOn ? 'whitesmoke' : 'hsl(0,0%,80%)'}`
+              }),
+              indicatorsContainer: base => ({
+                ...base,
+                backgroundColor : `${darkModeOn ? 'hsl(209, 23%, 22%)' : 'initial'}`, 
+                padding: '1px 0px',
+                borderTopRightRadius: 3,
+                borderBottomRightRadius: 3
               }),
               singleValue: base => ({
                 ...base,
@@ -164,7 +173,10 @@ const Inputs = ({ regions }) => {
                 }
               },
               control: (provided, state) => {
-                return { ...provided, borderColor: `${darkModeOn ? 'hsl(209, 23%, 22%)' : 'lightgrey'}`}
+                return { 
+                  ...provided, 
+                  borderColor: `${darkModeOn ? 'hsl(209, 23%, 22%)' : 'lightgrey'}`,
+                }
               }
             }}
           />            
