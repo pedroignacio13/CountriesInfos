@@ -37,8 +37,6 @@ const Inputs = ({ regions }) => {
 
     const [country, setCountry] = useState('')
 
-    const [optionFocused, setOptionFocused] = useState(false)
-
     const {
         setCountries,
         countriesBackup,
