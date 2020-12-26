@@ -139,7 +139,8 @@ const Inputs = ({ regions }) => {
                 ...base,
                 backgroundColor: `${darkModeOn ? 'hsl(209, 23%, 22%)' : 'initial'}`,
                 width: 'calc(100% - 47px)',
-                padding: '7px 0px 7px 10px',
+                height: 38.5,
+                paddingLeft: '10px',
                 borderTopLeftRadius: 2.5,
                 borderBottomLeftRadius: 2.5
               }),
@@ -150,8 +151,7 @@ const Inputs = ({ regions }) => {
               indicatorsContainer: base => ({
                 ...base,
                 backgroundColor : `${darkModeOn ? 'hsl(209, 23%, 22%)' : 'initial'}`, 
-                /* padding: '1px 0px', */
-                height: 38,
+                height: 38.5,
                 borderTopRightRadius: 2.5,
                 borderBottomRightRadius: 2.5
               }),
