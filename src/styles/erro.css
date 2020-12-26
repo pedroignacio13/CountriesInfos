@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+/* 300, 600, 800 */
+/* font-family: 'Nunito Sans', sans-serif; */
+
+.erroh1, .erroh3{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.erroh1{
+    font-size: 5vw;
+    margin: 50px auto 0px;
+}
+
+.erroh3{
+    font-size: 3vw;
+    margin: 0 auto;
+}
+
+.dark-title{
+    color: whitesmoke;
+}
+
+.tipo-erro{
+    display: block;
+}

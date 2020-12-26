@@ -19,7 +19,6 @@ function Form(){
         darkModeOn} = useContext(MyContext)
 
     return(
-        //não está funcionando o filtro dos países
         <div className="form">
 
             {
@@ -71,9 +70,9 @@ const Inputs = ({ regions }) => {
     //SELECTCONTAINER -> CONTAINER QUE ENGLOBA O COMPONENTE INTEIRO
     //VALUECONTAINER -> CONTAINER QUE ENGLOBA A OPÇÃO ESCOLHIDA
 
-    //A LETRA NO INPUT AINDA FICA PRETA QUANDO O DARKMODE ESTÁ ATIVO
+    //A LETRA NO INPUT AINDA FICA PRETA QUANDO O DARKMODE ESTÁ ATIVO (FEITO)
     //PRECISO ESTILIZAR A SETINHA DO DROPDOWN MENU
-    //A BORDA AINDA ESTÁ COM A COR PADRÃO
+    //A BORDA AINDA ESTÁ COM A COR PADRÃO (FEITO)
     
     const SelectContainer = ({ children, ...props }) => {
       return (
@@ -141,8 +140,8 @@ const Inputs = ({ regions }) => {
                 backgroundColor: `${darkModeOn ? 'hsl(209, 23%, 22%)' : 'initial'}`,
                 width: 'calc(100% - 47px)',
                 padding: '7px 0px 7px 10px',
-                borderTopLeftRadius: 3,
-                borderBottomLeftRadius: 3
+                borderTopLeftRadius: 2.5,
+                borderBottomLeftRadius: 2.5
               }),
               placeholder: base => ({
                 ...base,
@@ -151,9 +150,10 @@ const Inputs = ({ regions }) => {
               indicatorsContainer: base => ({
                 ...base,
                 backgroundColor : `${darkModeOn ? 'hsl(209, 23%, 22%)' : 'initial'}`, 
-                padding: '1px 0px',
-                borderTopRightRadius: 3,
-                borderBottomRightRadius: 3
+                /* padding: '1px 0px', */
+                height: 38,
+                borderTopRightRadius: 2.5,
+                borderBottomRightRadius: 2.5
               }),
               singleValue: base => ({
                 ...base,

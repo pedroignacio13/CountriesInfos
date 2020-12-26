@@ -70,6 +70,7 @@
 @media only screen and (max-width: 800px) {
     .bigcountry{
         flex-direction: column;
+        height: 100vh;
     }
     .bigcountry img{
         width: 100%;

@@ -12,11 +12,12 @@ function Main(){
 
     const {        
         loading,
-        darkModeOn 
+        darkModeOn ,
+        countries
     } = useContext(MyContext)
     
     return(
-        <main className={darkModeOn ? 'main dark-main' : 'main'}>
+        <main className={darkModeOn ? 'main dark-main' : 'main'} style={{ height: `${countries.length === 0 ? 'calc(100vh - 60px)' : 'fit-content'}` }} >
 
             <Form />
             {
