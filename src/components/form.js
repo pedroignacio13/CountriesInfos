@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, Fragment } from 'react'
+import React, { useState, useContext, useEffect, Fragment, useReducer } from 'react'
 import { Link } from 'react-router-dom'
 import MyContext from '../context'
 /* import { GrSearch } from 'react-icons/gr' */
@@ -17,6 +17,7 @@ function Form(){
         setMostrarInputs, 
         regions,
         darkModeOn} = useContext(MyContext)
+
 
     return(
         <div className="form">
@@ -109,7 +110,7 @@ const Inputs = ({ regions }) => {
     const Option = props => {
       return (
         <Tooltip truncateText>
-          <components.Option {...props} />
+          <components.Option className={darkModeOn ? 'dark-option' : 'option'} {...props} />
         </Tooltip>
       )
     }

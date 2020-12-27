@@ -57,6 +57,18 @@ input:focus{
 .dark-lista{
     box-shadow: none;
 }
+.option:active{
+    background-color: lightgrey !important;
+}
+.option:hover{
+    background-color: lightgrey !important;
+}
+.dark-option:active{
+    background-color: blue;
+}
+.dark-option:hover{
+    background-color: blue;
+}
 
 .back{
     display: flex;

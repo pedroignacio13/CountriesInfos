@@ -13,12 +13,12 @@
 
 .bigcountry img{
     width: 40%;
-    height: 20vw;
+    height: 23vw;
 }
 
 .countryinfos{
     font-family: 'Nunito Sans', sans-serif, Arial, Helvetica, sans-serif;
-    margin-left: 10%;
+    margin-left: 5%;
 }
 
 .countryinfos h2{
@@ -28,15 +28,15 @@
 
 .textinfos{
     display: flex;
-    font-size: 1.2vw;
-    line-height: 27px;
+    font-size: 1.8vw;
+    line-height: 35px;
 }
 .dark-textinfos{
     color: hsl(0, 0%, 100%);
 }
 
 .otherinfos{
-    margin-left: 80px;
+    margin-left: 2%;
 }
 
 .bordercountries{
@@ -45,7 +45,7 @@
 
 .topicoborder{
     display: inline-block;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
 }
 
 .bordernames{
@@ -60,7 +60,7 @@
     border: 1px solid lightgrey;
     box-shadow: 0 0 10px 1px lightgrey;
     margin: 5px 5px;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
 }
 .dark-border{
     border: 1px solid hsl(209, 23%, 22%);
@@ -78,7 +78,7 @@
     }
     .textinfos{
         flex-direction: column;
-        font-size: 2.5vw;
+        font-size: 3.5vw;
         line-height: 2em;
     }
     .firstinfos{

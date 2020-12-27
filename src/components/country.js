@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useReducer } from 'react'
 import { Link } from 'react-router-dom'
 import MyContext from '../context'
 
@@ -9,6 +9,7 @@ function Country({ pais }){
   const { flag, name, population, region, capital, alpha2Code } = pais
 
   const {setMostrarInputs, darkModeOn} = useContext(MyContext)
+
 
   return(
       
