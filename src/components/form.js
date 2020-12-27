@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, Fragment, useReducer } from 'react'
+import React, { useState, useContext, useEffect, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import MyContext from '../context'
 /* import { GrSearch } from 'react-icons/gr' */
