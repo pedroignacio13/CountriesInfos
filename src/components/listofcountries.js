@@ -4,11 +4,22 @@ import Country from './country'
 import Erro from './error'
 
 import '../styles/country.css'
+import '../styles/form.css'
+
+import { Regioes, PesquisaPais } from './inputs'
 
 function ListOfCountries(){
     const {countries} = useContext(MyContext)
     return(
         <>
+        <div className="form">
+
+            <PesquisaPais />
+
+            <Regioes />
+
+        </div>
+
             {
                 countries.length === 0 ? <Erro /> : countries.map((pais) => {
                     return <Country pais={pais} key={pais.alpha2Code} />

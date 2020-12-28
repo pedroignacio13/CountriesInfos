@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import MyContext from '../context'
 
 import '../styles/country.css'
+import '../styles/form.css'
 
 function Country({ pais }){
 
@@ -12,30 +13,34 @@ function Country({ pais }){
 
 
   return(
-      
-    <Link className={darkModeOn ? 'card dark-card' : 'card'} to={`/${alpha2Code}`} onClick={() => setMostrarInputs(false)}>
     
-        <img src={flag} alt={name}/>
+    <>
 
-        <section className={darkModeOn ? 'infos dark-infos' : 'infos'}>
+        <Link className={darkModeOn ? 'card dark-card' : 'card'} to={`/${alpha2Code}`} onClick={() => setMostrarInputs(false)}>
+        
+            <img src={flag} alt={name}/>
 
-            <h4> {name} </h4>
+            <section className={darkModeOn ? 'infos dark-infos' : 'infos'}>
 
-            <p>
-                <span className="topico">Population:</span> {population}
-            </p>
+                <h4> {name} </h4>
 
-            <p>
-                <span className="topico">Region:</span> {region}
-            </p>
+                <p>
+                    <span className="topico">Population:</span> {population}
+                </p>
 
-            <p>
-                <span className="topico">Capital:</span> {capital}
-            </p>
+                <p>
+                    <span className="topico">Region:</span> {region}
+                </p>
 
-        </section>
-    
-    </Link>
+                <p>
+                    <span className="topico">Capital:</span> {capital}
+                </p>
+
+            </section>
+        
+        </Link>
+
+    </>
       
   )
 }

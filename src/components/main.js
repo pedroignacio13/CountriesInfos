@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { Route } from 'react-router-dom'
 import MyContext from '../context'
-import Form from './form'
 import ListOfCountries from './listofcountries'
 import BigCountry from './countrypage'
 
@@ -19,7 +18,6 @@ function Main(){
     return(
         <main className={darkModeOn ? 'main dark-main' : 'main'} style={{ height: `${countries.length === 0 ? 'calc(100vh - 60px)' : 'fit-content'}` }} >
 
-            <Form />
             {
                 !loading && <section className="paises">
                     {

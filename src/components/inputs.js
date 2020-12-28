@@ -1,41 +1,12 @@
-import React, { useState, useContext, useEffect, Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useContext, useEffect } from 'react'
 import MyContext from '../context'
-/* import { GrSearch } from 'react-icons/gr' */
-import { BsArrowLeft } from 'react-icons/bs'
-/* import { RiArrowDropDownLine } from 'react-icons/ri' */
 
 import Select, { components } from 'react-select';
 import Tooltip from '@atlaskit/tooltip';
 
 import '../styles/form.css'
 
-function Form(){
-
-    const {
-        mostrarInputs, 
-        setMostrarInputs, 
-        regions,
-        darkModeOn} = useContext(MyContext)
-
-
-    return(
-        <div className="form">
-
-            {
-                !mostrarInputs ? 
-                <Link className={darkModeOn ? 'back dark-back' : 'back'} to='/' onClick={() => setMostrarInputs(true)}> <BsArrowLeft /> Back </Link>
-                : 
-                <Inputs regions={regions} />
-            }
-
-        </div>
-    )
-}
-
-const Inputs = ({ regions }) => {
-
-    const [country, setCountry] = useState('')
+const Regioes = ({ regions }) => {
 
     const {
         setCountries,
@@ -46,22 +17,6 @@ const Inputs = ({ regions }) => {
     function filtrarRegiao(continente){
         setCountries(countriesBackup.filter((obj) => obj.region === continente))
     }
-
-    //DEVE VALIDAR O INPUT PARA VERIFICAR SE A PRIMEIRA LETRA É MAIÚSCULA
-    function validaInput(input){
-        setCountry(input)
-    }
-    
-    useEffect(() => {
-        function filtrarPais(pais){
-            setCountries(() => {
-                //A IDEIA É FAZER COM QUE A PRIMEIRA LETRA SEJA SEMPRE MAIUSCULA SEM QUE O USUARIO TENHA QUE COLOCÁ-LA MAIUSCULA
-                return countriesBackup.filter((obj) => obj.name.startsWith(pais))
-            })
-        }
-
-        filtrarPais(country)
-    }, [country, countriesBackup, setCountries])
 
     //INDICATORSCONTAINER -> BOTÕES QUE FICAM À DIREITA DO INPUT
     //INDICATORSEPARATOR -> BARRINHA QUE FICA NO MEIO DOS BOTÕES
@@ -117,14 +72,6 @@ const Inputs = ({ regions }) => {
 
     return(
         <>
-          <input 
-            type="text" 
-            placeholder='Search for a country...' 
-            className={darkModeOn ? 'search dark-search' : 'search'}
-            value={country}
-            onChange={(e) => validaInput(e.target.value)}            
-          />
-
           <Select 
             onChange={(e) => filtrarRegiao(e.value)} 
             placeholder={"Filter by region"}
@@ -184,4 +131,40 @@ const Inputs = ({ regions }) => {
     )
 }
 
-export default Form;
+const PesquisaPais = () => {
+
+  const [country, setCountry] = useState('')
+
+  const {
+    setCountries,
+    countriesBackup,
+    darkModeOn} = useContext(MyContext)
+
+    useEffect(() => {
+      function filtrarPais(pais){
+          setCountries(() => {
+              //A IDEIA É FAZER COM QUE A PRIMEIRA LETRA SEJA SEMPRE MAIUSCULA SEM QUE O USUARIO TENHA QUE COLOCÁ-LA MAIUSCULA
+              return countriesBackup.filter((obj) => obj.name.startsWith(pais))
+          })
+      }
+
+      filtrarPais(country)
+  }, [country, countriesBackup, setCountries])
+
+  //DEVE VALIDAR O INPUT PARA VERIFICAR SE A PRIMEIRA LETRA É MAIÚSCULA
+  function validaInput(input){
+    setCountry(input)
+  }
+
+  return (
+    <input 
+      type="text" 
+      placeholder='Search for a country...' 
+      className={darkModeOn ? 'search dark-search' : 'search'}
+      value={country}
+      onChange={(e) => validaInput(e.target.value)}            
+    />
+  )
+}
+
+export { Regioes, PesquisaPais }

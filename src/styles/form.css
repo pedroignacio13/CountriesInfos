@@ -9,7 +9,7 @@ input:focus{
 .form{
     box-sizing: border-box;
     width: 100%;
-    padding: 40px 60px;
+    padding: 40px 0px;
     
     display: flex;
     justify-content: space-between;    
