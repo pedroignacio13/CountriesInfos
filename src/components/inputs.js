@@ -7,7 +7,7 @@ import Tooltip from '@atlaskit/tooltip';
 import '../styles/form.css'
 
 const Regioes = ({ regions }) => {
-
+    console.log(regions)
     const {
         setCountries,
         countriesBackup,

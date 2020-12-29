@@ -9,14 +9,14 @@ import '../styles/form.css'
 import { Regioes, PesquisaPais } from './inputs'
 
 function ListOfCountries(){
-    const {countries} = useContext(MyContext)
+    const {countries, regions} = useContext(MyContext)
     return(
         <>
         <div className="form">
 
             <PesquisaPais />
 
-            <Regioes />
+            <Regioes regions={regions} />
 
         </div>
 

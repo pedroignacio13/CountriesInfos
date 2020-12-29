@@ -21,15 +21,11 @@ function App() {
   /* ARRAY QUE CONTÉM O REQUEST INICIAL DOS PAÍSES (USADO PARA AUXILIAR NO FILTRO DE PAÍSES) */
   const [countriesBackup, setCountriesBackup] = useState([])
 
-  /* const [paisFiltrado, setPaisFiltrado] = useState([]) */
-
   /* AUXILIO NA RENDERIZAÇÃO (NÃO SEI SE ESTÁ IMPLEMENTADO OU SE FUNCIONA) */
   const [loading, setLoading] = useState(true)
 
   /* ARRAY QUE ARMAZENA SOMENTE AS REGIÕES PARA O FILTRO */
   const [regions, setRegions] = useState([])
-
-  
 
   /* FILTER FUNCTION FOR THE FILTER OF COUNTRIES */
   const filterRegions = (arr) => {
@@ -72,8 +68,6 @@ function App() {
         regions,
         countriesBackup,
         setCountriesBackup,
-        /* paisFiltrado,
-        setPaisFiltrado */
         darkModeOn,
         setDarkModeOn
       }}
