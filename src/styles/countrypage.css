@@ -76,6 +76,9 @@
         width: 100%;
         height: unset;
     }
+    .countryinfos{
+        margin-left: 2%;
+    }
     .textinfos{
         flex-direction: column;
         font-size: 3.5vw;
