@@ -159,6 +159,8 @@ const PesquisaPais = () => {
   return (
     <input 
       type="text" 
+      name="country name"
+      for=""
       placeholder='Search for a country...' 
       className={darkModeOn ? 'search dark-search' : 'search'}
       value={country}
