@@ -16,7 +16,7 @@ function Main(){
     } = useContext(MyContext)
     
     return(
-        <main className={darkModeOn ? 'main dark-main' : 'main'} style={{ height: `${countries.length === 0 ? 'calc(100vh - 60px)' : 'fit-content'}` }} >
+        <main className={darkModeOn === true ? 'main dark-main' : 'main'} style={{ height: `${countries.length === 0 ? 'calc(100vh - 60px)' : 'fit-content'}` }} >
 
             {
                 !loading && <section className="paises">

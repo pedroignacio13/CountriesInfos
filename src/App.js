@@ -9,8 +9,18 @@ import './styles/global.css'
 const url = 'https://restcountries.eu/rest/v2/'
 
 function App() {
+  /* useEffect(() => {
+    if(localStorage.length === 0){
+      localStorage.setItem("darkModeActive", "")
+    }
+  }, []) */
   /* FARÁ A CONDICIONAL NA RENDERIZAÇÃO DOS COMPONENTES NO MODO DARK */
-  const [darkModeOn, setDarkModeOn] = useState(false)
+  const [darkModeOn, setDarkModeOn] = useState(window.localStorage.getItem("darkModeActive") === "true" ? true : false)
+
+  useEffect(() => {
+    window.localStorage.setItem("darkModeActive", darkModeOn)
+    //console.log(typeof window.localStorage.getItem("darkModeActive"))
+  }, [darkModeOn])
 
   /* CONDICIONAL PARA RENDERIZAR O FORM E A LISTA */
   const [mostrarInputs, setMostrarInputs] = useState(true)

@@ -10,15 +10,18 @@ function Navbar(){
 
   function darkMode(){
     setDarkModeOn(!darkModeOn)
+
+    /* setDarkModeOn(!darkModeOn)
+    localStorage.setItem("darkModeActive", darkModeOn) */
   }
 
   return(
-    <nav className={darkModeOn ? 'nav dark-nav' : 'nav'}>
+    <nav className={darkModeOn === true ? 'nav dark-nav' : 'nav'}>
 
-      <Link className={darkModeOn ? 'titulo dark-titulo' : 'titulo'} to='/' onClick={() => setMostrarInputs(true)}>Where in the world?</Link>
+      <Link className={darkModeOn === true ? 'titulo dark-titulo' : 'titulo'} to='/' onClick={() => setMostrarInputs(true)}>Where in the world?</Link>
 
-      <div className={darkModeOn ? 'darkmode dark-titulo' : 'darkmode'} onClick={() => darkMode()}>
-        <FiMoon id='lua' style={{ fill : `${darkModeOn ? 'white' : null}` }} />
+      <div className={darkModeOn === true ? 'darkmode dark-titulo' : 'darkmode'} onClick={() => darkMode()}>
+        <FiMoon id='lua' style={{ fill : `${darkModeOn === true ? 'white' : null}` }} />
         <p>Dark Mode</p>
       </div>
 

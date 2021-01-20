@@ -16,11 +16,11 @@ function Country({ pais }){
     
     <>
 
-        <Link className={darkModeOn ? 'card dark-card' : 'card'} to={`/${alpha2Code}`} onClick={() => setMostrarInputs(false)}>
+        <Link className={darkModeOn === true ? 'card dark-card' : 'card'} to={`/${alpha2Code}`} onClick={() => setMostrarInputs(false)}>
         
             <img src={flag} alt={name}/>
 
-            <section className={darkModeOn ? 'infos dark-infos' : 'infos'}>
+            <section className={darkModeOn === true ? 'infos dark-infos' : 'infos'}>
 
                 <h4> {name} </h4>
 

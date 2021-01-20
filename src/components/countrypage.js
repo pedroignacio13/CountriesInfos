@@ -59,19 +59,19 @@ function BigCountry(){
                   <>
 
                     <div className="form">
-                        <Link className={darkModeOn ? 'back dark-back' : 'back'} to='/' onClick={() => setMostrarInputs(true)}> <BsArrowLeft /> Back </Link>
+                        <Link className={darkModeOn === true ? 'back dark-back' : 'back'} to='/' onClick={() => setMostrarInputs(true)}> <BsArrowLeft /> Back </Link>
                     </div>
 
                     <section className="bigcountry" key={alpha2Code}>
 
                       <img src={flag} alt={name} />
 
-                       <div className={darkModeOn ? 'countryinfos dark-textinfos' : 'countryinfos'}>
+                       <div className={darkModeOn === true ? 'countryinfos dark-textinfos' : 'countryinfos'}>
 
                            <h2> {name} </h2>
 
                             {/* ESSA DIV ENGLOBA AS DUAS COLUNAS DE DADOS */}
-                            <div className={darkModeOn ? 'textinfos dark-textinfos' : 'textinfos'}>
+                            <div className={darkModeOn === true ? 'textinfos dark-textinfos' : 'textinfos'}>
 
                                 {/* ENGLOBA A PRIMEIRA COLUNA */}
                                 <div className="firstinfos">
@@ -121,7 +121,7 @@ function BigCountry(){
                                 <span className="topicoborder">
                                     Border Countries: {fullBordersNames.length === 0 ? <b>Sem Informações</b> : 
                                     fullBordersNames.map((arr, index) => {											
-                                      return <span className={darkModeOn ? 'border dark-border' : 'border'} key={index}> {arr} </span>
+                                      return <span className={darkModeOn === true ? 'border dark-border' : 'border'} key={index}> {arr} </span>
                                     })
                                   }
                                 </span>

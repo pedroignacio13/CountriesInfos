@@ -7,7 +7,6 @@ import Tooltip from '@atlaskit/tooltip';
 import '../styles/form.css'
 
 const Regioes = ({ regions }) => {
-    console.log(regions)
     const {
         setCountries,
         countriesBackup,
@@ -65,7 +64,7 @@ const Regioes = ({ regions }) => {
     const Option = props => {
       return (
         <Tooltip truncateText>
-          <components.Option className={darkModeOn ? 'dark-option' : 'option'} {...props} />
+          <components.Option className={darkModeOn === true ? 'dark-option' : 'option'} {...props} />
         </Tooltip>
       )
     }
@@ -76,16 +75,16 @@ const Regioes = ({ regions }) => {
             onChange={(e) => filtrarRegiao(e.value)} 
             placeholder={"Filter by region"}
             options={regions} 
-            className={`${darkModeOn ? 'lista dark-lista' : 'lista'}`}                        
+            className={`${darkModeOn === true ? 'lista dark-lista' : 'lista'}`}                        
             components={{ SelectContainer, ValueContainer, IndicatorsContainer, Placeholder, SingleValue, MenuList, Option }}
             styles={{
               container: base => ({
                 ...base,
-                border: `${darkModeOn ? '0px' : '1px solid hsl(0%, 0%, 80%)'}`
+                border: `${darkModeOn === true ? '0px' : '1px solid hsl(0%, 0%, 80%)'}`
               }),
               valueContainer: base => ({
                 ...base,
-                backgroundColor: `${darkModeOn ? 'hsl(209, 23%, 22%)' : 'initial'}`,
+                backgroundColor: `${darkModeOn === true ? 'hsl(209, 23%, 22%)' : 'initial'}`,
                 width: 'calc(100% - 47px)',
                 height: 38.5,
                 paddingLeft: '10px',
@@ -94,34 +93,34 @@ const Regioes = ({ regions }) => {
               }),
               placeholder: base => ({
                 ...base,
-                color: `${darkModeOn ? 'whitesmoke' : 'hsl(0,0%,80%)'}`
+                color: `${darkModeOn === true ? 'whitesmoke' : 'hsl(0,0%,80%)'}`
               }),
               indicatorsContainer: base => ({
                 ...base,
-                backgroundColor : `${darkModeOn ? 'hsl(209, 23%, 22%)' : 'initial'}`, 
+                backgroundColor : `${darkModeOn === true ? 'hsl(209, 23%, 22%)' : 'initial'}`, 
                 height: 38.5,
                 borderTopRightRadius: 2.5,
                 borderBottomRightRadius: 2.5
               }),
               singleValue: base => ({
                 ...base,
-                color: `${darkModeOn ? 'whitesmoke' : 'initial'}`
+                color: `${darkModeOn === true ? 'whitesmoke' : 'initial'}`
               }),              
               menuList: base => ({
                 ...base,
-                backgroundColor: `${darkModeOn ? 'hsl(209, 23%, 22%)' : 'initial'}`,
+                backgroundColor: `${darkModeOn === true ? 'hsl(209, 23%, 22%)' : 'initial'}`,
                 borderRadius: 3
               }),
               option: (provided, state) => {
                 return { 
                   ...provided, 
-                  color: `${darkModeOn ? 'whitesmoke' : 'hsl(0%, 0%, 80%)'}`
+                  color: `${darkModeOn === true ? 'whitesmoke' : 'hsl(0%, 0%, 80%)'}`
                 }
               },
               control: (provided, state) => {
                 return { 
                   ...provided, 
-                  borderColor: `${darkModeOn ? 'hsl(209, 23%, 22%)' : 'lightgrey'}`,
+                  borderColor: `${darkModeOn === true ? 'hsl(209, 23%, 22%)' : 'lightgrey'}`,
                 }
               }
             }}
@@ -162,7 +161,7 @@ const PesquisaPais = () => {
       name="country name"
       for=""
       placeholder='Search for a country...' 
-      className={darkModeOn ? 'search dark-search' : 'search'}
+      className={darkModeOn === true ? 'search dark-search' : 'search'}
       value={country}
       onChange={(e) => validaInput(e.target.value)}            
     />
