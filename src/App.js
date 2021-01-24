@@ -34,7 +34,6 @@ function App() {
 
   /* FILTER FUNCTION FOR THE FILTER OF COUNTRIES */
   const filterRegions = (arr) => {
-
       let newRegions = arr.map((obj) => obj.region)
       newRegions = [...new Set(newRegions)]
       newRegions = newRegions.filter((regiao) => regiao !== "")
@@ -42,7 +41,6 @@ function App() {
         return { "value" : regiao, "label" : regiao }
       })
       setRegions(objarr)
-      
   }
 
   /* REALIZA O REQUEST */
@@ -62,10 +60,9 @@ function App() {
       }
       fetchCountries()
     }
+    filterRegions(!JSON.parse(localStorage.getItem("CountriesArray")) ? [] : JSON.parse(localStorage.getItem("CountriesArray")))
+    setCountriesBackup(!JSON.parse(localStorage.getItem("CountriesArray")) ? [] : JSON.parse(localStorage.getItem("CountriesArray")))
     setLoading(false)
-    filterRegions(JSON.parse(localStorage.getItem("CountriesArray")))
-    setCountriesBackup(JSON.parse(localStorage.getItem("CountriesArray")))
-    console.log(localStorage.getItem("CountriesArray"))
   }, [])
 
   return (
