@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import MyContext from './context'
+import LoadingComponent from './components/loading'
 import Navbar from './components/navbar'
 import Main from './components/main'
 
@@ -9,17 +10,11 @@ import './styles/global.css'
 const url = 'https://restcountries.eu/rest/v2/'
 
 function App() {
-  /* useEffect(() => {
-    if(localStorage.length === 0){
-      localStorage.setItem("darkModeActive", "")
-    }
-  }, []) */
   /* FARÁ A CONDICIONAL NA RENDERIZAÇÃO DOS COMPONENTES NO MODO DARK */
   const [darkModeOn, setDarkModeOn] = useState(window.localStorage.getItem("darkModeActive") === "true" ? true : false)
 
   useEffect(() => {
     window.localStorage.setItem("darkModeActive", darkModeOn)
-    //console.log(typeof window.localStorage.getItem("darkModeActive"))
   }, [darkModeOn])
 
   /* CONDICIONAL PARA RENDERIZAR O FORM E A LISTA */
@@ -35,7 +30,8 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   /* ARRAY QUE ARMAZENA SOMENTE AS REGIÕES PARA O FILTRO */
-  const [regions, setRegions] = useState([])
+  const [regions, setRegions] = useState(!window.localStorage.getItem("CountriesArray") ? [] : JSON.parse(localStorage.getItem("CountriesArray")))
+  //const [regions, setRegions] = useState([])
 
   /* FILTER FUNCTION FOR THE FILTER OF COUNTRIES */
   const filterRegions = (arr) => {
@@ -52,19 +48,25 @@ function App() {
 
   /* REALIZA O REQUEST */
   useEffect(() => {
-    /* FETCH FUNCTION */
-    const fetchCountries = async () => {
-    const response = await fetch(url)
-    const data = await response.json()
-    setCountries(() => {
-        filterRegions(data)
-        setCountriesBackup(data)
-        return data
-    })
-    setLoading(false)
+    if(!window.localStorage.getItem("CountriesArray")){
+      /* FETCH FUNCTION */
+      const fetchCountries = async () => {
+        const response = await fetch(url)
+        const data = await response.json()
+        setCountries(() => {
+            filterRegions(data)
+            setCountriesBackup(data)
+            return data
+        })
+        setLoading(false)
+        window.localStorage.setItem("CountriesArray", JSON.stringify(data))
+      }
+      fetchCountries()
     }
-
-    fetchCountries()
+    setLoading(false)
+    filterRegions(JSON.parse(localStorage.getItem("CountriesArray")))
+    setCountriesBackup(JSON.parse(localStorage.getItem("CountriesArray")))
+    console.log(localStorage.getItem("CountriesArray"))
   }, [])
 
   return (

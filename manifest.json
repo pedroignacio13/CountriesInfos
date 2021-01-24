@@ -1,0 +1,17 @@
+{
+  "short-name": "Countries API",
+  "name": "Countries Infos",
+  "description": "A simple web app that tells informations about countries around the globe",
+  "icons": [
+    {
+      "src": "./src/assets/world.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./src/assets/world.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

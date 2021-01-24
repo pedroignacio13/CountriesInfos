@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Route } from 'react-router-dom'
 import MyContext from '../context'
+import LoadingComponent from './loading'
 import ListOfCountries from './listofcountries'
 import BigCountry from './countrypage'
 
@@ -19,7 +20,7 @@ function Main(){
         <main className={darkModeOn === true ? 'main dark-main' : 'main'} style={{ height: `${countries.length === 0 ? 'calc(100vh - 60px)' : 'fit-content'}` }} >
 
             {
-                !loading && <section className="paises">
+                loading ? <LoadingComponent /> : <section className="paises">
                     {
                         <>
                             <Route exact path="/" children={<ListOfCountries />} />                                    
