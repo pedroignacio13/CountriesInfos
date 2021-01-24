@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import MyContext from './context'
-import LoadingComponent from './components/loading'
 import Navbar from './components/navbar'
 import Main from './components/main'
 
